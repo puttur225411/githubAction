@@ -38,7 +38,7 @@ jobs:
         run: |
           the_secret=$((RANDOM))
           echo "::add-mask::$the_secret"
-          echo "$the_secret" >> "$GITHUB_OUTPUT"
+          echo "secret-value=$the_secret" >> "$GITHUB_OUTPUT"
 
       - name: Use that secret output (protected by a mask)
         run: |
