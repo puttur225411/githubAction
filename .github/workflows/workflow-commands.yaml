@@ -42,4 +42,4 @@ jobs:
 
       - name: Use that secret output (protected by a mask)
         run: |
-          echo "the secret number is ${{ steps.sets-a-secret.outputs.secret-number }}"
+          echo "the secret number is ${{ steps.sets-a-secret.outputs.secret-value }}"
