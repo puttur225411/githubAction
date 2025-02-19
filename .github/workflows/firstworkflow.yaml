@@ -16,7 +16,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: view sw version
-        run: sw_version
+        run: sw_vers
   
   dependdant-job:
     runs-on: windows-latest
