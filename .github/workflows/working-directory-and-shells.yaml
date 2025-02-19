@@ -36,4 +36,4 @@ jobs:
       - name: Python Shell
         shell: python
         run: |
-          print "hello world"
+          print ("hello world")
