@@ -14,7 +14,8 @@ jobs:
         with:
           who-to-greet: ${{env.who-to-greet}}
         
-
+# action needs input and output, thats what we have provided input as who-to-greet and it produces output as time
+#  that time we have printed in the below steps this we can check on https://github.com/actions/hello-world-javascript-action
       - name: Log Greeting Time
         run: |
           echo "${{ steps.greet.outputs.time }}"
