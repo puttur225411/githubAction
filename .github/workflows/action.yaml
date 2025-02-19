@@ -1,0 +1,21 @@
+name: Simple Action
+on: [push]
+env:
+    who-to-greet: "Shubham King"
+ 
+   
+jobs:
+  simple-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simple JS Action
+        id: greet
+        uses: actions/hello-world-javascript-action@v1.1
+        with:
+          who-to-greet: ${{env.who-to-greet}}
+        
+
+      - name: Log Greeting Time
+        run: |
+          echo "${{ steps.greet.outputs.time }}"
+          run: echo "printing env variavle $who-to-greet"
