@@ -18,4 +18,4 @@ jobs:
       - name: Log Greeting Time
         run: |
           echo "${{ steps.greet.outputs.time }}"
-          echo "printing env variavle $who-to-greet"
+          echo "printing env variavle ${{env.who-to-greet}}"
