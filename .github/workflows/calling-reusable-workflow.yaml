@@ -5,7 +5,7 @@ jobs:
         runs-on: ubuntu-latest
         steps: 
             - name: calling reusable workflow
-              uses: puttur225411/githubAction/.github/workflows/reusable-wrokflow-same-as-workflowrun.yaml
+              uses: puttur225411/githubAction/.github/workflows/reusable-wrokflow-same-as-workflowrun.yaml@main
               with:
                 config-path: .github/workflows
 
