@@ -6,3 +6,11 @@ jobs:
             with:
               config-path: .github/workflows
 
+
+
+    after-calling:
+        runs-on: ubuntu-latest
+        steps:
+          - name: after calling
+            run: echo "called the workflow"
+

@@ -11,6 +11,5 @@ jobs:
   triage:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/labeler@v4
-      with:
-        configuration-path: ${{ inputs.config-path }}
+      - name: called from different workflow
+        run: echo "called from different workflow"
