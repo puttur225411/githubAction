@@ -1,0 +1,11 @@
+name: call reusable workflow
+on: [push]
+jobs:
+    call-reusable-workflow:
+        runs-on: ubuntu-latest
+        steps: 
+            - name: calling reusable workflow
+              uses: puttur225411/githubAction/.github/workflows/reusable-wrokflow-same-as-workflowrun.yaml
+              with:
+                config-path: .github/workflows
+
