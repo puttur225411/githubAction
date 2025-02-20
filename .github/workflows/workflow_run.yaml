@@ -4,6 +4,8 @@ on:
       workflows: [Pull Request Comment]
       types:
         - completed
+      branches:
+        - main
   
 jobs:
     on-success:
