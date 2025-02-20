@@ -2,7 +2,7 @@ name: call reusable workflow
 on: [push]
 jobs:
     call-reusable-workflow:
-            uses: puttur225411/githubAction/.github/workflows/reusable-wrokflow-same-as-workflowrun.yaml@main
+            uses: puttur225411/githubAction/.github/workflows/reusable-wrokflow.yaml@main
             with:
               config-path: .github/workflows
 
