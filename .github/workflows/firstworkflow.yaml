@@ -1,6 +1,6 @@
 name: First Workflow
-on: [push]
-
+on:
+  - push
 jobs:
   run-shell-commands:
     runs-on: ubuntu-latest
@@ -11,16 +11,15 @@ jobs:
         run: |
           node -v
           npm -v
-
   parallel-macos-job:
     runs-on: macos-latest
     steps:
       - name: view sw version
         run: sw_vers
-  
   dependdant-job:
     runs-on: windows-latest
-    needs: [run-shell-commands]
+    needs:
+      - run-shell-commands
     steps:
       - name: echo windows string
         run: Write-Output Windows string
