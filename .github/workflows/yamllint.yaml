@@ -9,7 +9,7 @@
           - name: yaml-lint
             uses: ibiqlik/action-yamllint@v3
             with:
-                file_or_dir: .
+                file_or_dir: .github/workflows/workflow_run.yaml
                 # Multi line
                 config_data: |
                   extends: default
