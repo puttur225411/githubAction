@@ -1,12 +1,27 @@
----
-  name: Yaml Lint
-  on: [push]  # yamllint disable-line rule:truthy
-  jobs:
-    lintAllTheThings:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v3
-        - name: yaml-lint
-          uses: ibiqlik/action-yamllint@v3
-          with:
-            file_or_dir: .
+name: First Workflow
+on:
+  - push
+jobs:
+  run-shell-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print a string
+        run: echo "Hello"
+      - name: multiline command
+        run: |
+          node -v
+          npm -v
+  parallel-macos-job:
+    runs-on: macos-latest
+    steps:
+      - name: view sw version
+        run: sw_vers
+  dependdant-job:
+    runs-on: windows-latest
+    needs:
+      - run-shell-commands
+    steps:
+      - name: echo windows string
+        run: Write-Output Windows string
+      - name: error steps
+        run: deosnot exist
