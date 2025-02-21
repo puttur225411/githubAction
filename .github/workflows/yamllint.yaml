@@ -16,3 +16,4 @@
                         level: warning
                       trailing-spaces:
                         level: warning
+                file_or_dir: .github/workflows/firstworkflow.yaml
