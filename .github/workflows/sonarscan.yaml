@@ -11,4 +11,4 @@ jobs:
         uses: gitricko/sonarless@v1.2
 
       - name: check the sonar metrics file
-        run: cat ./sonar-mymetrics.json 
+        run: cat ./sonar-metrics.json 
