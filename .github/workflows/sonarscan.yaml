@@ -19,3 +19,17 @@ jobs:
           VULN=$(cat ./sonar-metrics.json | jq -r '.component.measures[] | select(.metric == "vulnerabilities").value')
           echo "# of vulnerabilities = ${VULN}"
           [ ${VULN} -eq "0" ]
+
+      - name: Check Sonar Metrics - Fail on Any Issue
+        run: |
+         echo "Checking SonarQube metrics..."
+         METRICS=$(cat ./sonar-metrics.json | jq -r '.component.measures[] | select(.value | tonumber > 0) | "\(.metric): \(.value)"' ./sonar-metrics.json)
+    
+         if [[ -n "$METRICS" ]]; then
+          echo "❌ Issues found in SonarQube metrics:"
+          echo "$METRICS"
+          exit 1
+         fi
+        
+         echo "✅ No issues found in SonarQube metrics."
+    
