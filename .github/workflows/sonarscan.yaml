@@ -1,0 +1,14 @@
+name: Sonar Scan
+on: push
+jobs:
+  Sonarless-Scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Sonarless Scan
+        uses: gitricko/sonarless@v1.2
+
+      - name: check the sonar metrics file
+        run: cat ./sonar-mymetrics.json 
